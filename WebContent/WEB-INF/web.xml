@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+
+
+	<context-param>
+		<param-name>user</param-name>
+		<param-value>huangzhen</param-value>
+	</context-param>
+	
+	<context-param>
+	     <param-name>password</param-name>
+	     <param-value>root123</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>driver</param-name>
+		<param-value>com.jdbc.mysql.Driver</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>JdbcUrl</param-name>
+		<param-value>mysql:jdbc://192.168.100.12:3306/test</param-value>
+	</context-param>
+
+	<servlet>
+		<servlet-name>helloServlet</servlet-name>
+		<servlet-class>me.huangzhen.HelloServlet</servlet-class>
+
+		<init-param>
+			<param-name>user</param-name>
+			<param-value>root</param-value>
+		</init-param>
+
+		<init-param>
+			<param-name>password</param-name>
+			<param-value>root123</param-value>
+		</init-param>
+
+		<load-on-startup>-1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>helloServlet</servlet-name>
+		<url-pattern>/hello</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>helloServlet</servlet-name>
+		<url-pattern>/hello2</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>secondServlet</servlet-name>
+		<servlet-class>me.huangzhen.SecondServlet</servlet-class>
+		<load-on-startup>-3</load-on-startup>
+	</servlet>
+
+
+	<servlet>
+		<servlet-name>login</servlet-name>
+		<servlet-class>me.huangzhen.LoginServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>login</servlet-name>
+		<url-pattern>/loginServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>login2</servlet-name>
+		<servlet-class>me.huangzhen.LoginServlet3</servlet-class>
+	</servlet>
+	
+		<servlet-mapping>
+		<servlet-name>login2</servlet-name>
+		<url-pattern>/loginServlet2</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>login5</servlet-name>
+		<servlet-class>me.huangzhen.LoginServlet5</servlet-class>
+	</servlet>
+	
+		<servlet-mapping>
+		<servlet-name>login5</servlet-name>
+		<url-pattern>/loginServlet5</url-pattern>
+	</servlet-mapping>
+
+
+</web-app>
